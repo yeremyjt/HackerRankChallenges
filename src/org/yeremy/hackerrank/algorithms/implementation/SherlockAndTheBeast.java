@@ -1,4 +1,4 @@
-package org.yeremy.hackerrank.algorithms;
+package org.yeremy.hackerrank.algorithms.implementation;
 
 import java.io.*;
 import java.math.BigInteger;

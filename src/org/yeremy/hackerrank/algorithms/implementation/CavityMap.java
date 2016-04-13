@@ -88,10 +88,10 @@ public class CavityMap
 
     private static boolean isCavity(int i, int j, int[][] matrix)
     {
-        // Check cell above
+        // Check cell below
         if (isAdjacentSmaller(matrix[i][j], i + 1, j, matrix) &&
                 
-                // Check cell below
+                // Check cell above
                 isAdjacentSmaller(matrix[i][j], i - 1, j, matrix) &&
                 
                 // Check cell to the right

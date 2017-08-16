@@ -135,7 +135,6 @@ public class BalancedTrees
         return parent;
     }
 
-
     private static int height(Node node)
     {
         if (node == null) return -1;
@@ -159,11 +158,16 @@ public class BalancedTrees
     {
         BalancedTrees balancedTree = new BalancedTrees();
 
-        Node root = balancedTree.insert(null, 3);
-        root = balancedTree.insert(root, 2);
-        root = balancedTree.insert(root, 4);
-        root = balancedTree.insert(root, 5);
-        root = balancedTree.insert(root, 6);
+        Node root = balancedTree.insert(null, 14);
+        root = balancedTree.insert(root, 25);
+        root = balancedTree.insert(root, 21);
+        root = balancedTree.insert(root, 10);
+        root = balancedTree.insert(root, 23);
+        root = balancedTree.insert(root, 7);
+        root = balancedTree.insert(root, 26);
+        root = balancedTree.insert(root, 12);
+        root = balancedTree.insert(root, 30);
+        root = balancedTree.insert(root, 16);
 
         System.out.println(root);
     }

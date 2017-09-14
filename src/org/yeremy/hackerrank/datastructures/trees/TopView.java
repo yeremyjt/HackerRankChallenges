@@ -46,29 +46,29 @@ public class TopView
 
     void topView(Node root)
     {
-        if(root==null)
+        if(root == null)
             return;
-        Stack<Integer> s=new Stack<>();
-        s.push(root.data);
-        Node root2=root;
-        while(root.left!=null)
+        Stack<Integer> stack = new Stack<>();
+        stack.push(root.data);
+        Node root2 = root;
+        while(root.left != null)
         {
-            s.push(root.left.data);
-            root=root.left;
+            stack.push(root.left.data);
+            root = root.left;
         }
-        while(s.size()!=0)
-            System.out.print(s.pop()+" ");
+        while(stack.size()!=0)
+            System.out.print(stack.pop() + " ");
 
-        Queue<Integer> q=new LinkedList<>();
-        q.add(root2.right.data);
-        root2=root2.right;
-        while(root2.right!=null)
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(root2.right.data);
+        root2 = root2.right;
+        while(root2.right != null)
         {
-            q.add(root2.right.data);
-            root2=root2.right;
+            queue.add(root2.right.data);
+            root2 = root2.right;
         }
-        while(q.size()!=0)
-            System.out.print(q.poll()+" ");
+        while(queue.size()!= 0)
+            System.out.print(queue.poll() + " ");
     }
 
 

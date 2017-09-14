@@ -1,8 +1,13 @@
 package org.yeremy.hackerrank.datastructures.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
 public class TopView
 {
-    private class Node
+    private static class Node
     {
         int data;
         Node left;
@@ -41,34 +46,43 @@ public class TopView
 
     void topView(Node root)
     {
-        if (root.left != null)
+        if(root==null)
+            return;
+        Stack<Integer> s=new Stack<>();
+        s.push(root.data);
+        Node root2=root;
+        while(root.left!=null)
         {
-            leftView(root.left);
+            s.push(root.left.data);
+            root=root.left;
         }
-        System.out.print(root.data + " ");
-        if (root.right != null)
+        while(s.size()!=0)
+            System.out.print(s.pop()+" ");
+
+        Queue<Integer> q=new LinkedList<>();
+        q.add(root2.right.data);
+        root2=root2.right;
+        while(root2.right!=null)
         {
-            rightView(root.right);
+            q.add(root2.right.data);
+            root2=root2.right;
         }
+        while(q.size()!=0)
+            System.out.print(q.poll()+" ");
     }
 
-    void leftView(Node node)
+
+    public static void main(String[] args)
     {
-        if (node.left != null)
+        Scanner scanner = new Scanner(System.in);
+        TopView topView = new TopView();
+        int n = scanner.nextInt();
+        Node root = new Node(scanner.nextInt());
+        for (int i = 1; i < n; i++)
         {
-            leftView(node.left);
+            topView.insert(root, scanner.nextInt());
         }
-        System.out.print(node.data + " ");
+
+        topView.topView(root);
     }
-
-    void rightView(Node node)
-    {
-        if (node.right != null)
-        {
-            rightView(node.right);
-        }
-        System.out.print(node.data + " ");
-    }
-
-
 }
